@@ -1,0 +1,14 @@
+[Unit]
+Description=File Watcher Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/kali/watch_directory.py
+WorkingDirectory=/home/kali
+StandardOutput=journal
+StandardError=journal
+Restart=always
+User=kali
+
+[Install]
+WantedBy=multi-user.target
